@@ -75,11 +75,9 @@ window.addEventListener("load", () => {
               let Ftemp = ((temp - 273.15) * 9) / 5 + 32;
               temperatureDegree.textContent = Ftemp.toFixed(2);
               temperatureSpan.textContent = "°F";
-              console.log("this is farenhit");
             } else {
               temperatureDegree.textContent = currentTemp.toFixed(2);
               temperatureSpan.textContent = "°C";
-              console.log("this is celcius");
             }
           });
         })
