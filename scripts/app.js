@@ -33,7 +33,7 @@ window.addEventListener("load", () => {
           currentTemp -= 273.15;
           temperatureDegree.textContent = currentTemp.toFixed(2);
           temperatureDescription.textContent = main;
-          currentIcon.src = `http://openweathermap.org/img/wn/${icon}@2x.png`;
+          currentIcon.src = `https://openweathermap.org/img/wn/${icon}@2x.png`;
 
           degreeSection.addEventListener("click", () => {
             if (temperatureSpan.textContent === "°C") {
@@ -53,7 +53,7 @@ window.addEventListener("load", () => {
     if (city.value.trim() === "") {
       alert("wrong city name");
     } else {
-      const api = `http://api.openweathermap.org/data/2.5/weather?q=${city.value}&appid=059989eb536dd71e7c22b993c8263896`;
+      const api = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&appid=059989eb536dd71e7c22b993c8263896`;
       fetch(api)
         .then((response) => {
           return response.json();
@@ -68,7 +68,7 @@ window.addEventListener("load", () => {
           currentTemp -= 273.15;
           temperatureDegree.textContent = currentTemp.toFixed(2);
           temperatureDescription.textContent = main;
-          currentIcon.src = `http://openweathermap.org/img/wn/${icon}@2x.png`;
+          currentIcon.src = `https://openweathermap.org/img/wn/${icon}@2x.png`;
 
           degreeSection.addEventListener("click", () => {
             if (temperatureSpan.textContent !== "°C") {
