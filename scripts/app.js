@@ -47,6 +47,8 @@ window.addEventListener("load", () => {
           });
         });
     });
+  } else {
+    alert("sorry we were not able to fetch your location");
   }
 
   searchBtn.addEventListener("click", () => {
@@ -69,17 +71,6 @@ window.addEventListener("load", () => {
           temperatureDegree.textContent = currentTemp.toFixed(2);
           temperatureDescription.textContent = main;
           currentIcon.src = `https://openweathermap.org/img/wn/${icon}@2x.png`;
-
-          degreeSection.addEventListener("click", () => {
-            if (temperatureSpan.textContent !== "°C") {
-              let Ftemp = ((temp - 273.15) * 9) / 5 + 32;
-              temperatureDegree.textContent = Ftemp.toFixed(2);
-              temperatureSpan.textContent = "°F";
-            } else {
-              temperatureDegree.textContent = currentTemp.toFixed(2);
-              temperatureSpan.textContent = "°C";
-            }
-          });
         })
         .catch((error) => {
           alert("wrong city name");
