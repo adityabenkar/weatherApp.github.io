@@ -11,8 +11,8 @@ window.addEventListener("load", () => {
   const currentIcon = document.querySelector(".image-container");
   const temperatureSpan = document.querySelector(".temperature-span");
   const degreeSection = document.querySelector(".degree-section");
-  const city = document.getElementById("city");
-  const searchBtn = document.querySelector("button");
+  const city = document.querySelector(".search-location__city");
+  const searchBtn = document.querySelector(".search-location__btn");
 
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -50,6 +50,11 @@ window.addEventListener("load", () => {
   } else {
     alert("sorry we were not able to fetch your location");
   }
+
+  city.addEventListener("keyup", (event) => {
+    event.preventDefault();
+    if (event.keyCode === 13) searchBtn.click();
+  });
 
   searchBtn.addEventListener("click", () => {
     if (city.value.trim() === "") {
