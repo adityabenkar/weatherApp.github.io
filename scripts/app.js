@@ -44,7 +44,7 @@ window.addEventListener("load", async () => {
   function renderWeatherdata({ temp, icon, loc, desc, span }) {
     let currentTemp = temp - 273.15;
     temperatureDegree.textContent = currentTemp.toFixed(2);
-    temperatureIcon.src = `http://openweathermap.org/img/wn/${icon}@2x.png`;
+    temperatureIcon.src = `https://openweathermap.org/img/wn/${icon}@2x.png`;
     location.textContent = loc;
     temperatureDescription.textContent = desc;
     temperatureSpan.textContent = span;
