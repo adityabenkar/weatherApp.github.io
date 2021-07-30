@@ -6,7 +6,6 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-
 body {
   height: 100vh;
   background: -webkit-gradient(
@@ -32,9 +31,8 @@ body {
   -ms-flex-align: center;
   align-items: center;
   font-family: sans-serif;
-  color: white;
+  color: #fff;
 }
-
 .search-location {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -47,7 +45,6 @@ body {
   -ms-flex-align: center;
   align-items: center;
 }
-
 .search-location__city,
 .search-location__btn {
   font-size: 1.5rem;
@@ -57,15 +54,13 @@ body {
   padding: 0.5rem 0;
   border: none;
 }
-
 .search-location__city:focus-visible {
   outline: none;
   border: 1px solid #7e7e7e;
 }
-
 .search-location__btn {
   background: #6676ff;
-  color: white;
+  color: #fff;
   border: 2px solid #263bfc;
   border-radius: 0.4rem;
   padding: 0.5rem 1rem;
@@ -73,13 +68,11 @@ body {
   -o-transition: all 0.4s;
   transition: all 0.4s;
 }
-
 .search-location__btn:hover {
   color: #263bfc;
-  background-color: white;
+  background-color: #fff;
   border-color: 2px solid #263bfc;
 }
-
 .location,
 .temperature {
   padding: 1rem 0;
@@ -90,7 +83,6 @@ body {
   -ms-flex-align: center;
   align-items: center;
 }
-
 .temperature {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -98,7 +90,6 @@ body {
   flex-direction: column;
   font-size: 1.2rem;
 }
-
 .degree-section {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -109,7 +100,6 @@ body {
   -ms-flex-align: center;
   align-items: center;
 }
-
 @media screen and (min-width: 460px) {
   .search-location,
   .location {
