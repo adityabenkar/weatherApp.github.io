@@ -1,4 +1,5 @@
 /** @format */
+
 window.addEventListener("load", async () => {
   const location = document.querySelector(".location-timezone");
   const temperatureIcon = document.querySelector(".image-container");
@@ -10,12 +11,11 @@ window.addEventListener("load", async () => {
   );
   const searchCity = document.querySelector(".search-location__city");
   const searchBtn = document.querySelector(".search-location__btn");
-
   async function fetchWeatherData(obj = {}) {
     const { lat, long, city } = obj;
     let api = city
-      ? `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=059989eb536dd71e7c22b993c8263896`
-      : `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude={part}&appid=059989eb536dd71e7c22b993c8263896`;
+      ? `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=a21ef7f10fe55c0af8bf179360f5f53f`
+      : `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude={part}&appid=a21ef7f10fe55c0af8bf179360f5f53f`;
     try {
       const response = await fetch(api);
       const data = await response.json();
@@ -24,7 +24,6 @@ window.addEventListener("load", async () => {
         console.clear();
         return;
       }
-
       temperature = data?.current?.temp ?? data?.main?.temp;
       const weatherData = {
         temp: temperature,
@@ -40,7 +39,6 @@ window.addEventListener("load", async () => {
       alert(err.message);
     }
   }
-
   function renderWeatherdata({ temp, icon, loc, desc, span }) {
     let currentTemp = temp - 273.15;
     temperatureDegree.textContent = currentTemp.toFixed(2);
@@ -49,7 +47,6 @@ window.addEventListener("load", async () => {
     temperatureDescription.textContent = desc;
     temperatureSpan.textContent = span;
   }
-
   degreeSection.addEventListener("click", () => {
     if (temperatureSpan.textContent === "°C") {
       let Ftemp = ((temperature - 273.15) * 9) / 5 + 32;
@@ -61,7 +58,6 @@ window.addEventListener("load", async () => {
       temperatureSpan.textContent = "°C";
     }
   });
-
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(async (position) => {
       const lat = position.coords.latitude;
@@ -69,12 +65,10 @@ window.addEventListener("load", async () => {
       await fetchWeatherData({ lat, long });
     });
   }
-
   searchBtn.addEventListener("click", async () => {
     if (searchCity.value.trim() === " ") alert("wrong searchCity name");
     else await fetchWeatherData({ city: searchCity.value });
   });
-
   searchCity.addEventListener("keyup", (event) => {
     event.preventDefault();
     if (event.keyCode === 13) searchBtn.click();
