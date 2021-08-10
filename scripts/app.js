@@ -11,11 +11,12 @@ window.addEventListener("load", async () => {
   );
   const searchCity = document.querySelector(".search-location__city");
   const searchBtn = document.querySelector(".search-location__btn");
+  const Key = "a21ef7f10fe55c0af8bf179360f5f53f";
   async function fetchWeatherData(obj = {}) {
     const { lat, long, city } = obj;
     let api = city
-      ? `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=a21ef7f10fe55c0af8bf179360f5f53f`
-      : `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude={part}&appid=a21ef7f10fe55c0af8bf179360f5f53f`;
+      ? `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${Key}`
+      : `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude={part}&appid=${Key}`;
     try {
       const response = await fetch(api);
       const data = await response.json();
