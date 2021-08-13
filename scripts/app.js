@@ -11,7 +11,9 @@ window.addEventListener("load", async () => {
   const searchCity = document.querySelector(".search-location__city");
   const searchBtn = document.querySelector(".search-location__btn");
   const loader = document.getElementById("loader");
-  loader.classList.add("disappear");
+  setTimeout(() => {
+    loader.classList.add("disappear");
+  }, 3000);
 
   async function fetchWeatherData(obj = {}) {
     const { lat, long, city } = obj;
