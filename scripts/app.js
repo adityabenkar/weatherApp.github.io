@@ -1,5 +1,4 @@
 /** @format */
-import { Api_Key } from "./api.js";
 window.addEventListener("load", async () => {
   const location = document.querySelector(".location-timezone");
   const temperatureIcon = document.querySelector(".image-container");
@@ -19,8 +18,8 @@ window.addEventListener("load", async () => {
   async function fetchWeatherData(obj = {}) {
     const { lat, long, city } = obj;
     let api = city
-      ? `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${Api_Key}`
-      : `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude={part}&appid=${Api_Key}`;
+      ? `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=a21ef7f10fe55c0af8bf179360f5f53f`
+      : `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude={part}&appid=a21ef7f10fe55c0af8bf179360f5f53f`;
     try {
       const response = await fetch(api);
       const data = await response.json();
