@@ -1,13 +1,3 @@
-/**
- * /*
- * Prefixed by https://autoprefixer.github.io
- * PostCSS: v8.3.6,
- * Autoprefixer: v10.3.1
- * Browsers: last 4 version
- *
- * @format
- */
-
 /** @format */
 
 * {
@@ -19,7 +9,6 @@
 
 body {
   height: 100vh;
-  background: -o-linear-gradient(rgb(76, 230, 241), rgb(87, 89, 252));
   background: -webkit-gradient(
     linear,
     left top,
@@ -27,6 +16,7 @@ body {
     from(rgb(76, 230, 241)),
     to(rgb(87, 89, 252))
   );
+  background: -o-linear-gradient(rgb(76, 230, 241), rgb(87, 89, 252));
   background: linear-gradient(rgb(76, 230, 241), rgb(87, 89, 252));
   display: -webkit-box;
   display: -ms-flexbox;
@@ -47,16 +37,11 @@ body {
 
 .loader {
   position: fixed;
-  height: 100vh;
+  height: 100%;
   width: 100%;
   background-color: white;
-  display: -ms-grid;
   display: grid;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
 }
 
@@ -66,7 +51,6 @@ body {
 }
 
 .disappear {
-  -webkit-animation: vanish 1s forwards;
   animation: vanish 1s forwards;
 }
 
@@ -162,13 +146,6 @@ body {
   }
   .image-container {
     height: 10rem;
-  }
-}
-
-@-webkit-keyframes vanish {
-  100% {
-    opacity: 0;
-    visibility: hidden;
   }
 }
 
